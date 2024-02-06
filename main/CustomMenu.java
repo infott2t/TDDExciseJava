@@ -7,7 +7,7 @@ public class CustomMenu {
 
     String menuStr;
     ArrayList<String> menuIndexArr;  
-    String menuFirstStrs = "0. Login\n1. Working on Service\n2. Rest\n3.Exit\n";
+    String menuFirstStrs = "0. Login\n1. Working on Service\n2. Rest\n3. Exit\n";
     String loginStrs = "1. input id, pw \n2. New regist \n3. find id/pw\n";
     String ServiceStrs = "1. Product\n2.Service learning\n3.Entity(java)\n";
 
@@ -88,7 +88,7 @@ public class CustomMenu {
                 String inputPW="";
                 String findPW="";
                 for(int i =0; i< passwordArray.length; i++){
-                    System.out.print(passwordArray[i]);
+                    //System.out.print(passwordArray[i]);
                     inputPW = inputPW + passwordArray[i];
                     findPW = inputPW;
                 Customer foundCustomer2 = null;
