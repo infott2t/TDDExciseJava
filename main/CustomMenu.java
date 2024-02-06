@@ -115,6 +115,8 @@ public class CustomMenu {
             }
             
 
+        }else if(menuIndex <= 0){
+            
         }
 
         return menuIndex;
