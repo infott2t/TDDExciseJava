@@ -8,7 +8,9 @@ public class TddStart {
     static Customer LoginCustomer;
 
     public static void main(String args[]){
+        System.out.print("\033[1;33m");
         System.out.println("TDD~.");
+        System.out.print("\033[0m");
         System.out.println("Make man, @tt2t2am1118(twitter.com). Enjoy~.");
         
         LoginCustomer = null; //로그인 초기화.
@@ -37,14 +39,14 @@ public class TddStart {
     static int processMenu(int menuIndex, CustomMenu menu, ArrayList<Customer> customers){
         if(SessionStatic.LoginCustomer!=null){
             if(SessionStatic.LoginCustomer.getId()!=null){
-                System.out.println("Status: Log in, "+SessionStatic.LoginCustomer.getIdName());
+                System.out.println("\033[1;32mStatus\033[0m: Log in, \033[1;34m"+SessionStatic.LoginCustomer.getIdName()+"\033[0m");
             }
         }else{
-            System.out.println("Status: No log in.");
+            System.out.println("\033[1;32mStatus\033[0m: No log in.");
         }
        
-        System.out.println("String [back] [break] [view menu]");
-        System.out.println("\033[1;32mMenu\033[0m "+menuIndex+"\033[1;32m*************************\033[0m");
+        System.out.println("\033[1;32mString\033[0m [back] [break] [view menu]");
+        System.out.println("\033[1;32mMenu\033[0m \033[1;255m"+menuIndex+"\033[0m\033[1;32m *************************\033[0m");
 
         menu.menuStrs(menuIndex);
         
