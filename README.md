@@ -10,7 +10,8 @@
 <br/>
 <h4>실행화면</h4>
  
-<img src="https://github.com/infott2t/TDDExciseJava/assets/25080178/344a7a42-dce6-4786-b17e-76f6f65c4ef7" alt="실행화면"></img>
+
+<img src="https://github.com/infott2t/TDDExciseJava/assets/25080178/361a008b-2eb8-4b33-9008-c401dd55e069" alt="실행화면"></img>
 <br/>
 <p>현재 이 프로그램을 개발하고 있습니다. 2024년 2월 ~. 언제 이 TDD 개발이 끝날지 모르는 군요.</p>
 <br/>
