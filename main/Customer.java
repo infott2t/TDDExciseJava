@@ -3,6 +3,8 @@ import java.util.Date;
 
 public class Customer {
 
+    private static Long lastId = 0L;
+
     private Long id;
     private String idName;
     private String email;
@@ -13,8 +15,8 @@ public class Customer {
     private String isDel;
     private Date createDate;
     
-    Customer(Long id, String idName, String email, String role, String password){
-        this.id = id;
+    Customer(String idName, String email, String role, String password){
+        this.id = ++lastId;
         this.idName = idName;
         this.email = email;
         this.role = role;
@@ -50,6 +52,14 @@ public class Customer {
 
     public void setCertNum(String certNum) {
         this.certNum = certNum;
+    }
+
+    public static Long getLastId() {
+        return lastId;
+    }
+
+    public static void setLastId(Long lastId) {
+        Customer.lastId = lastId;
     }
 
 }
