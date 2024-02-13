@@ -25,14 +25,15 @@ public class TddStart {
         ArrayList<Customer> customers = new ArrayList<>();
         ArrayList<TimeStamp0> timeStamp0s = new ArrayList<>();
         
-        Customer cus = new Customer(1L, "Caisy","caisy@email.com","Admin","1234");
+        Customer cus = new Customer("Caisy","caisy@email.com","Admin","1234");
         //Role이 admin일 경우, 자격증 번호가 필요. 개인정보취급사 등. 
+        Customer.setLastId(1L);  
         cus.setCertNum("00000000");
 
         customers.add(cus);
         do{
             menuIndex = processMenu(menuIndex, menu, customers, timeStamp0s);
-
+/* 
             try {
                 if (System.getProperty("os.name").contains("Windows")) {
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -41,8 +42,9 @@ public class TddStart {
                 }
             } catch (IOException | InterruptedException ex) {
                 ex.printStackTrace();
-            }
+            } */
            
+            System.out.println("\n\n\n");
           
             menuIndex ++;
         }while(menuIndex >=0);
