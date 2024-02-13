@@ -40,14 +40,17 @@ public class CustomMenu {
                 }else{
                     menuFirstStrs = menuFirstStrs1;
                 }
+                menuIndexArr.clear();
                 menuIndexArr.add(menuFirstStrs);
             }else{
                 if(SessionStatic.LoginCustomer==null){
+                    menuIndexArr.clear();
                     menuFirstStrs = menuFirstStrs0;
                 }else{
+                    menuIndexArr.clear();
                     menuFirstStrs = menuFirstStrs1;
                 }
-                //menuIndexArr.add(menuFirstStrs);
+                menuIndexArr.add(menuFirstStrs);
             }
         
         System.out.println(menuFirstStrs);
@@ -77,29 +80,35 @@ public class CustomMenu {
         SessionStatic.beforeResultStr = "";
         if(menuIndex == 0){
 
-
+            //menuIndexArr.clear();
             if(iStr.equals("0")){//System.out.println("Login..... .\n");
             if(SessionStatic.LoginCustomer==null){
+               
                 menuIndexArr.add(loginStrs);
             }else{
+               
                 menuIndexArr.add(logoutStrs);
             }
             
         }
         else if(iStr.equals("1")){//System.out.println("Working on Service..... .");
+            
             menuIndexArr.add(ServiceStrs);
         }
         else if(iStr.equals("2")){//System.out.println("Rest..... .");
            
             if(SessionStatic.LoginCustomer==null){
+              
                 SessionStatic.beforeResultStr= "Rest function, Login Need.";
                 menuIndex = menuIndex -1;
             }else{
+                
                 System.out.println("Rest... .");
                 menuIndexArr.add(restStrs0);
             }
         }
         else if(iStr.equals("3")){//System.out.println("My Page... .");
+             
             if(SessionStatic.LoginCustomer!=null){
                 menuIndexArr.add(myPage0);
             }else{
