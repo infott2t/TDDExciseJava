@@ -1,5 +1,5 @@
 package main;
-
+import java.util.Date;
 
 public class Customer {
 
@@ -8,6 +8,10 @@ public class Customer {
     private String email;
     private String role; // Customer, Seller, Admin 
     private String password; //암호화 필요.
+    private String certNum;
+
+    private String isDel;
+    private Date createDate;
     
     Customer(Long id, String idName, String email, String role, String password){
         this.id = id;
@@ -15,6 +19,9 @@ public class Customer {
         this.email = email;
         this.role = role;
         this.password = password;  
+
+        this.isDel ="N";
+        this.createDate = new Date();
     }
 
     String getIdName(){
@@ -27,6 +34,22 @@ public class Customer {
 
     Long getId(){
         return this.id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getIsDel() {
+        return isDel;
+    }
+
+    public void setCertNum(String certNum) {
+        this.certNum = certNum;
     }
 
 }
