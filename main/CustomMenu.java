@@ -196,6 +196,8 @@ public class CustomMenu {
                             String ynStr = sc.nextLine();
                             if(ynStr.equals("Y") || ynStr.equals("y")){
                                 System.out.println("\033[1;34mMake complete.\033[0m");
+                                Customer cus = new Customer(iStr,inputEmail,roleStr,twiceInputPW);
+                                customers.add(cus);
                                 try{
                                     Thread.sleep(2000);
                                 }catch(Exception e){
@@ -241,6 +243,7 @@ public class CustomMenu {
                     SessionStatic.LoginCustomer = null;
                     timeStamp0s.add(SessionStatic.Stamp0);
                     this.remove(menuIndex);
+                   
                     menuIndex = -1;
                 }
             } 
@@ -260,7 +263,7 @@ public class CustomMenu {
                     if(customer.getIdName().equals(findIdName)){
                         if(customer.getIsDel().equals("N")){
                             foundCustomer = customer;
-                            SessionStatic.LoginCustomer = new Customer(foundCustomer.getId(), foundCustomer.getIdName(), null, null, null);
+                            SessionStatic.LoginCustomer = new Customer(foundCustomer.getIdName(), null, null, null);
                             SessionStatic.Stamp0 = new TimeStamp0(SessionStatic.LoginCustomer.getId(), "LOG_IN" );
                             timeStamp0s.add(SessionStatic.Stamp0);
                             break;
@@ -297,6 +300,7 @@ public class CustomMenu {
                     if(SessionStatic.LoginCustomer.getId()!=null ){
                         System.out.println("Login success.");
                         SessionStatic.beforeResultStr="\033[1;34mLogin success.\033[0m";
+                        System.out.println(menuIndex + "  menuIndex...");
                         this.remove(menuIndex);
                         this.remove(menuIndex-1);
                         this.remove(menuIndex-2);
@@ -314,6 +318,7 @@ public class CustomMenu {
                 }else{
                     System.out.println("Customer not found");
                     this.remove(menuIndex);
+                    menuIndexArr.clear();
                     SessionStatic.beforeResultStr = "\033[1;34mCustomer not founded. Return menu.\033[0m";
                     menuIndex = -1;
                 }
@@ -356,14 +361,20 @@ public class CustomMenu {
                         }
                         System.out.println("Stamping. ...");
                         String textStrs = "Stamping. ...\n\n";
-                        for(int i=0; i<timeStamp0s.size();i++){
+                        for(int i=0; i<tsList.size();i++){
                             
                             textStrs = textStrs +  tsList.get(i).getFormatDateTime2() + " | "+ tsList.get(i).getTodo()+ " | " + SessionStatic.LoginCustomer.getIdName() +"\n";
                         }
                         textStrs = textStrs + "\nViewer: \n       " + SessionStatic.LoginCustomer.getIdName() + " (role: " + SessionStatic.LoginCustomer.getRole() + " email: " + SessionStatic.LoginCustomer.getEmail()+" )";
                         System.out.println(textStrs);
                         System.out.println("\n ... Done.");
-                        new SwingTextArea("Time Stamp", textStrs,370,370);
+                        try{
+                            new SwingTextArea("Time Stamp", textStrs,370,370);
+                        }catch(Exception e){
+                            e.printStackTrace();
+                            System.out.println(e.toString());
+                        }
+                       
                         this.remove(menuIndex);
                         menuIndex = menuIndex -2;
 
@@ -386,7 +397,7 @@ public class CustomMenu {
                     }
                 }else{
                     SessionStatic.beforeResultStr="Need login~. Thank you.";
-                    menuIndex = menuIndex-2;
+                    menuIndex = menuIndex-1;
                 }
             }
         }
