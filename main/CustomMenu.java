@@ -189,7 +189,7 @@ public class CustomMenu {
                             String roleStr = "";
                             if(inputNumber.equals("1")){ roleStr = "ADMIN";
                             System.out.println("\033[1;32m***\033[0m Cert number need: ");
-                            System.out.println("Prove need, contact our company. Contance number and email ..."); // Add company service sentence need. Custom. 
+                            System.out.println("Prove need, contact our company. Contance number and email ... Thank you."); // Add company service sentence need. Custom. 
                             sc = new Scanner(System.in);
                             certNum = sc.nextLine();
                             }
