@@ -1,5 +1,10 @@
 package main.example.springboot.web;
+<<<<<<< HEAD
 /*책, p132쪽 참조. 
+=======
+
+/* 책, p132쪽 참조. 
+>>>>>>> e3f72a8392e5c45574cf4d6766dfe47ef5debff0
  * folder: config, service, domain, web.  
  * class, Controller 2 case. Controller or ApiController.
  *
